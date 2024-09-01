@@ -1,0 +1,340 @@
+
+body {
+    font-family: 'Catamaran', sans-serif;
+  }
+  
+/* Container 21 */
+.page {
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    width: 258px; 
+    height: 900px; 
+    background: #FFFFFFFF; /* white */
+    border-radius: 0px; 
+    box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f; /* shadow-xs */
+  }
+
+/* Sidebar Logo */
+.logo {
+  position: absolute;
+  top: 26px;
+  left: 20px;
+  width: 36px;
+  height: 36px;
+}
+/* Main Text (Brand Name) */
+.main-text {
+  position: absolute;
+  top: 24px;
+  left: 72px;
+  font-family: 'Catamaran', sans-serif; /* Body */
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  color: #EB1C24FF; /* secondary-500 */
+}
+
+/* Sub Text (Tagline) */
+.sub-text {
+  position: absolute;
+  top: 52px;
+  left: 72px;
+  font-family: 'Catamaran', sans-serif; /* Body */
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #005500FF; /* primary-500 */
+}
+.sidebar-1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 258px;
+    height: 475px;
+    border-radius: 0px;
+    box-shadow: 0px .2px 0px #171a1f;
+  }
+  
+  .sidebar-2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 258px;
+    height: 585px;
+    border-radius: 0px;
+    box-shadow: 0px .2px 0px #171a1f;
+  }
+  
+  .sidebar-3 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 258px;
+    height: 1080px;
+    border-radius: 0px;
+    box-shadow: 0px 0px 1px #171a1f;
+  }
+
+/* Sidebar Menu Section */
+.sidebar-menu {
+  top: 60px; /* Adjusted to clear logo and text */
+  left: 0px;
+  width: 258px;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF; /* Background color for the sidebar */
+  padding: 30px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow for the sidebar */
+}
+
+/* Sidebar Menu Items */
+.sidebar-menu .sidebar-menu-item {
+  padding: 16px 20px; /* Adjusted padding for consistency */
+  display: flex;
+  align-items: center;
+  color: #565D6D; /* neutral-600 */
+  background: transparent;
+  border-radius: 4px;
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Sidebar Menu Item Link */
+.sidebar-menu .sidebar-menu-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+}
+
+/* Sidebar Menu Icons */
+.sidebar-menu .sidebar-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+/* Selected Sidebar Menu Item */
+.sidebar-menu .sidebar-menu-item.selected {
+  position: relative;
+  font-weight: 700;
+  color: #005500; /* primary-500 */
+  background: #E6FFE6; /* A light shade for selected item */
+}
+
+/* Selected Item Indicator */
+.sidebar-menu .sidebar-menu-item.selected .indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #005500; /* primary-500 */
+}
+
+/* Hover Effect for Sidebar Menu Item */
+.sidebar-menu .sidebar-menu-item:hover {
+  background: #F0F0F0; /* Slight hover effect */
+}
+
+
+/* Container 25 */
+.dash-info{
+    position: absolute; 
+    top: 0px; 
+    left: 258px; 
+    /* 1182px */
+    width: 1182px; 
+    height: 84px; 
+    background: #FFFFFFFF; /* white */
+    border-radius: 0px; 
+    box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f; /* shadow-xs */
+  }
+  .dash_text {
+    position: absolute; 
+    top: 1px; 
+    left: 22px; 
+    font-family: Catamaran; /* Body */
+    font-size: 32px; 
+    line-height: 48px; 
+    font-weight: 700; 
+    color: #171A1FFF; /* neutral-900 */
+  }
+/* Button Style */
+.button {
+  position: absolute;
+  top: 25px;
+  left: 185px;
+  height: 36px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Catamaran', sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #FFFFFFFF; /* white */
+  background: #005500FF; /* primary-500 */
+  border: none;
+  border-radius: 2px; /* border-m */
+  cursor: pointer;
+}
+  /* Hover */
+  .button:hover {
+    color: #FFFFFFFF; /* white */
+    background: #004200FF; /* primary-650 */
+  }
+  /* Pressed */
+  .button:hover:active {
+    color: #FFFFFFFF; /* white */
+    background: #002D00FF; /* primary-800 */
+  }
+  /* Disabled */
+  .button:disabled {
+    opacity: 0.4; 
+  }
+
+/* User Name Text */
+.user-name {
+    position: absolute; 
+    top: 27px; 
+    left: 852px; 
+    width: 216px; 
+    height: 90px; 
+    font-family: Catamaran; /* Body */
+    font-size: 20px; 
+    line-height: 30px; 
+    font-weight: 400; 
+    color: #171A1FFF; /* neutral-900 */
+  }
+
+/* User Avatar */
+.avatar {
+  width: 64px;
+  height: 64px;
+  margin-left: 10px;
+  background: #86FF86FF; /* primary-200 */
+  border-radius: 32px;
+  overflow: hidden;
+}
+/* Avatar 10 */
+.avatar {
+    position: absolute; 
+    top: 10px; 
+    left: 1090px; 
+    width: 64px; 
+    height: 64px; 
+    background: #86FF86FF; /* primary-200 */
+    opacity: 1; 
+    overflow: hidden; 
+    border-radius: 32px; 
+  }
+  .avatar img {
+    width: 64px; 
+    height: 64px; 
+  }
+  .avatar .badge {
+    width: 16px; 
+    height: 16px; 
+    border-radius: 8px; 
+  }
+  .avatar.active .badge {
+    background: #000000FF; /* transparent */
+    opacity: 0; 
+    border-width: 1.5px; 
+    border-color: #FFFFFFFF; 
+  }
+  .avatar.inactive .badge {
+    background: #000000FF; /* transparent */
+    opacity: 0; 
+    border-width: 1.5px; 
+    border-color: #FFFFFFFF; 
+  }
+  .avatar.idle .badge {
+    background: #000000FF; /* transparent */
+    opacity: 0; 
+    border-width: 1.5px; 
+    border-color: #FFFFFFFF; 
+  }
+  .avatar.do_not_disturb .badge {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 16px; 
+    line-height: 16px; 
+    color: #FFFFFFFF; /* white */
+    background: #000000FF; /* transparent */
+    opacity: 0; 
+    border-width: 1.5px; 
+    border-color: #FFFFFFFF; 
+  }
+/*TABLE 1 PRODUCTSS*/
+
+/* Table 1 */
+
+/* Updated Table Styles */
+.product-table {
+    position: absolute;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.product-table th, .product-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 16px;
+    color: #171A1FFF; /* neutral-900 */
+}
+
+.product-table th {
+    font-weight: 700;
+    color: #171A1FFF; /* neutral-900 */
+}
+
+.product-table td {
+    font-weight: 400;
+    color: #565D6DFF; /* neutral-600 */
+}
+
+.product-icon {
+    width: 50px; /* Adjust size as necessary */
+    height: auto;
+}
+
+.product-table tbody tr.low-stock {
+    background-color: #ffe6e6; /* Light red background for low stock */
+}
+
+.product-table tbody tr td small {
+    font-size: 14px;
+    color: #888888; /* Grey for secondary text */
+}
+
+.product-table tbody tr td:nth-child(3) {
+    text-align: center; /* Center align quantity */
+}
+
+.product-table tbody tr td:nth-child(4) {
+    font-weight: 700; /* Bold for status */
+}
+.product-table tbody tr td:nth-child(4):before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.product-table tbody tr td:nth-child(4):before {
+    background-color: #eb1c24; /* Red for low stock */
+}
+
+.product-table tbody tr td:nth-child(4):before {
+    background-color: #28a745; /* Green for good stock */
+}
