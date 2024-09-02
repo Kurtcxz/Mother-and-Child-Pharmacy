@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="client.js"></script>
+    <script src="Product.js"></script>
 </head>
 <body class="page">
     <div class="sidebar">
@@ -78,12 +79,164 @@
         </ul>
     </div>
     <div class="dash-info">
-        <h1 class="dash_text">Products</h1>
+        <h1 class="dash_text">Inventory</h1>
         <span class="user-name">Aileen Castro (Admin)</span>
-        <img src="resources/profile_icon.png" alt="Aileen Castro" class="avatar">
-    </div>
-    <div class="main-content">
+        <img src="resources/I1.jpg" alt="Aileen Castro" class="avatar">
+        
+        <div class="table">
+            <h4 class="Icon">Icon</h4>
+            <h4 class="Name">Name</h4>
+            <h4 class="Quantity">Quantity</h4>
+            <h4 class="Status">Status</h4>
+        </div>
 
+        <div class="button_Img">
+            <button id="addProductBtn">+</button>
+            
+            <div id="productForm" class="modal">
+                <div class="modal-content">
+                    <h2>Add New Product</h2>
+                    <div class="form-section">
+                        <h3>Basic Information</h3>
+                        <div class="textbox">
+                            <label for="brandName">Brand Name</label>
+                            <input type="text" id="brandName" name="brandName">
+                        </div>
+
+                        <div class="textbox">
+                            <label for="genericName">Generic Name</label>
+                            <input type="text" id="genericName" name="genericName">
+                        </div>
+
+                        <div class="textbox">
+                            <label for="productCode">Product Code</label>
+                            <input type="text" id="productCode" name="productCode">
+                        </div>
+
+                        <div class="textbox">
+                            <label for="barcode">Barcode</label>
+                            <input type="text" id="barcode" name="barcode" placeholder="Enter or Scan Barcode">
+                        </div>
+
+                        <div class="textbox">
+                            <label for="icon">Icon</label>
+                            <div class="icon-upload">
+                                <img id="iconPreview" src="resources/default_icon.png" alt="Icon Preview" class="icon-preview">
+                                <label for="iconFile" class="icon-label">+</label>
+                                <input type="file" id="iconFile" accept="image/*" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Sale Information</h3>
+                        <div class="textbox">
+                            <label for="price">Price</label>
+                            <input type="text" id="price" name="price" placeholder="₱">
+                        </div>
+
+                        <div class="textbox">
+                            <label for="quantity">Quantity</label>
+                            <input type="text" id="quantity" name="quantity">
+                        </div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button id="cancelBtn">Cancel</button>
+                        <button id="saveBtn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table for displaying product information -->
+        <table id="productTable" class="product-table">
+            
+            <tbody>
+                <!-- Product rows will be inserted here by JavaScript -->
+            </tbody>
+        </table>
     </div>
+    <script>
+    document.getElementById("addProductBtn").onclick = function() {
+    document.getElementById("productForm").style.display = "block";
+};
+
+document.getElementById("cancelBtn").onclick = function() {
+    document.getElementById("productForm").style.display = "none";
+};
+
+document.getElementById("saveBtn").onclick = function() {
+    // Get values from the form inputs
+    const brandName = document.getElementById("brandName").value;
+    const genericName = document.getElementById("genericName").value;
+    const productCode = document.getElementById("productCode").value;
+    const barcode = document.getElementById("barcode").value;
+    const price = document.getElementById("price").value;
+    const quantity = document.getElementById("quantity").value;
+    const iconFile = document.getElementById("iconFile").files[0];
+
+    // Validate that all fields are filled
+    if (!brandName || !genericName || !productCode || !barcode || !price || !quantity || !iconFile) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    // Create a new table row
+    const table = document.getElementById("productTable").getElementsByTagName('tbody')[0];
+    const newRow = table.insertRow();
+
+    // Create a cell for the icon
+    const iconCell = newRow.insertCell(0);
+    if (iconFile) {
+        const iconURL = URL.createObjectURL(iconFile);
+        const iconImg = document.createElement("img");
+        iconImg.src = iconURL;
+        iconImg.alt = "Product Icon";
+        iconImg.style.width = "80px"; // Adjust size as needed
+        iconImg.style.height = "80px";
+        iconCell.appendChild(iconImg);
+    } else {
+        iconCell.textContent = "No Icon";
+    }
+
+    newRow.insertCell(1).textContent = brandName;
+    //newRow.insertCell(2).textContent = genericName;
+    //newRow.insertCell(3).textContent = productCode;
+    //newRow.insertCell(4).textContent = barcode;
+    newRow.insertCell(2).textContent = price;
+    newRow.insertCell(3).textContent = quantity;
+
+    // Clear form inputs
+    document.getElementById("brandName").value = "";
+    document.getElementById("genericName").value = "";
+    document.getElementById("productCode").value = "";
+    document.getElementById("barcode").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("quantity").value = "";
+    document.getElementById("iconFile").value = ""; // Clear file input
+
+    // Hide the form
+    document.getElementById("productForm").style.display = "none";
+
+    alert("Product Saved!");
+};
+
+// Handle file input change event to update icon preview
+document.getElementById("iconFile").addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById("iconPreview").src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+    </script>
+    
+    
 </body>
 </html>
+
